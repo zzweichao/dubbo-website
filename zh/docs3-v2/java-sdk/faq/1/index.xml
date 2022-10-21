@@ -1,0 +1,107 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 1 - 注册中心层</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/</link><description>Recent content in 1 - 注册中心层 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 1-1 - 地址非法（服务版本或分组不匹配）</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/1/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>Provider 端配置的 &lt;code>service.group&lt;/code> 和 Consumer 端配置的 &lt;code>reference.group&lt;/code> （即服务分组的配置）不匹配。&lt;/li>
+&lt;li>Provider 端配置的 &lt;code>service.version&lt;/code> 和 Consumer 端配置的 &lt;code>reference.version&lt;/code> （即服务版本的配置）不匹配。&lt;/li>
+&lt;/ol>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;ol>
+&lt;li>确保 Provider 和 Consumer 端的服务分组配置相对应。&lt;/li>
+&lt;li>确保 Provider 和 Consumer 端的服务版本配置相对应。&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-3 - URL 销毁失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/3/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>当&lt;code>FrameworkExecutorRepository&lt;/code>被销毁以后，调用&lt;code>CacheableFailbackRegistry.evictURLCache&lt;/code>会导致销毁失败，产生1-3错误码。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-4 - 空地址</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/4/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>1.registry.integration.RegistryDirectory 中的1-4错误是refreshInvoker过程中invokerUrls为空导致的，可以忽略。
+2.registry.support.CacheableFailbackRegistry 中的1-4错误可能是consumer和provider不匹配，并且关闭了“空保护”所导致。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>1.确保 Provider 和 Consumer 端的服务分组配置相对应。
+2.确保 Provider 和 Consumer 端的服务版本配置相对应。
+3.检查注册中心的&lt;code>enable-empty-protection&lt;/code>是否为true（默认为true）。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-5 - 接收到没有任何参数的 URL</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/5/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>在调用 &lt;code>CacheableFailbackRegistry.toUrlsWithoutEmpty&lt;/code> 时，若传入的参数 &lt;code>Collection&amp;lt;String&amp;gt;providers&lt;/code> 中若存在某个 provider 其没有任何参数的话，将会触发1-5错误码。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
+&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-6 - 清空URL缓存出错</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/6/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/6/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>在&lt;code>CacheableFailbackRegistry.RemovalTask&lt;/code>清空url缓存时候出错将会触发1-6错误。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
+&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-8 - 销毁时注销（取消订阅）地址失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/8/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>1.可能是注册中心宕机导致造成的消费者注销或者取消订阅时出现错误。
+2.可能是对应的 provider 未能成功发布。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>1.排查注册中心是否在正常运行。
+2.排查 provider 是否成功发布。
+3.排查 provider 的注册中心相关参数比如 &lt;code>registry&lt;/code> ,&lt;code>config-center&lt;/code>,&lt;code>metadata-report&lt;/code>是否配置正确。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-9 - 读写注册中心服务缓存失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/9/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>多个 Dubbo 进程（或其他 Java 进程）使用了同一个缓存文件。&lt;/li>
+&lt;li>由于缓存文件所在目录的文件系统权限问题，导致读写失败。&lt;/li>
+&lt;li>&lt;code>dubbo.registry.file&lt;/code> 的值输入错误。&lt;/li>
+&lt;li>不小心指定了两个注册中心使用同一文件存储。&lt;/li>
+&lt;/ol>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>&lt;strong>提示：&lt;/strong>&lt;/p>
+&lt;p>如未指定 &lt;code>dubbo.registry.file&lt;/code>，则注册中心服务缓存路径默认为 &lt;code>~/.dubbo&lt;/code> 目录&lt;/p>
+&lt;p>（其中 &lt;code>~&lt;/code> 为用户的 HOME 目录）&lt;/p>
+&lt;/div>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;ol>
+&lt;li>检查 &lt;code>dubbo.registry.file&lt;/code> 的值有无拼写错误。&lt;/li>
+&lt;li>检查是否有其它进程使用了同一份缓存文件。&lt;/li>
+&lt;li>如果指定了 &lt;code>dubbo.registry.file&lt;/code>，那么检查下它在文件系统的权限。&lt;/li>
+&lt;li>排查是否出现了“两个注册中心使用了同一文件存储” 这一情况，如果出现则调整。&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-12 - “注册服务” 的实例均已销毁</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>在 Dubbo 优雅停机的过程中，通过调用 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>destroyAll&lt;/code> 进行解注册。
+而在销毁 &lt;code>Registryprotocol&lt;/code> 的 &lt;code>unexport&lt;/code> 的过程中，会通过 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>getRegistry&lt;/code> 来试图获得已经被销毁的 registry ，这导致了1-12警告。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-13 - 执行重试任务失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/13/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/13/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>注册中心离线。&lt;/li>
+&lt;/ol>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;ol>
+&lt;li>检查注册中心是否正常工作。&lt;/li>
+&lt;li>检查注册中心所在服务器及其网络是否正常工作。&lt;/li>
+&lt;/ol>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-17 - metadata Server 失效</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/17/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/17/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>可能是metadata的相关参数配置出现问题，特别是 &lt;code>metadataServiceProtocol&lt;/code> 和 &lt;code>metadataServicePort&lt;/code>.&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>1.查看是否和 1-18 错误同时出现，如果同时出现优先尝试解决 1-18
+2.排查 &lt;code>metadataServicePort&lt;/code> 端口号是否存在冲突问题。Provider 和 Consumer 所配置端口同时存在冲突，会产生 1-17 错误。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-18 - 未提供 metadata service 端口</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/18/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/18/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>可能是由于&lt;code>metadataType&lt;/code>为 local 模式，且 &lt;code>metadataServicePort&lt;/code> 配置出错。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>1.检查 Provider 侧的 &lt;code>metadataType&lt;/code> 属性值。
+2.检查 Provider 侧的 &lt;code>metadataServicePort&lt;/code> 配置是否正确，特别注意是否和其他应用端口存在冲突。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item></channel></rss>
