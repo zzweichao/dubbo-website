@@ -40,10 +40,20 @@
 &lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
 &lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
 &lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-7 - 通知注册事件失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/7/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>在应用于基于 xDS 协议的相关平台时，在更新元数据时，需要通知 consumer ，如果某个 consumer 离线会导致通知失败，并移除对应 consumer 的 listener。&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
 &lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-8 - 销毁时注销（取消订阅）地址失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/8/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
-&lt;p>1.可能是注册中心宕机导致造成的消费者注销或者取消订阅时出现错误。
-2.可能是对应的 provider 未能成功发布。&lt;/p>
+&lt;ol>
+&lt;li>可能是注册中心的相关配置不正确&lt;/li>
+&lt;li>可能是注册中心宕机导致造成的消费者注销或者取消订阅时出现错误。&lt;/li>
+&lt;li>可能是对应的 provider 未能成功发布。&lt;/li>
+&lt;/ol>
 &lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
 &lt;p>1.排查注册中心是否在正常运行。
 2.排查 provider 是否成功发布。
@@ -72,6 +82,23 @@
 &lt;/ol>
 &lt;h2 id="另请参阅">另请参阅&lt;/h2>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-10 - 读写注册中心服务缓存失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/10/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>多个 Dubbo 进程使用了同一个缓存文件。&lt;/li>
+&lt;li>在多注册中心的情况下，指定了多个注册中心使用同一文件存储。&lt;/li>
+&lt;/ol>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误常与 1-9 错误共同出现。检查是否有多个 Dubbo 进程使用了同一个缓存文件或者是否指定多个注册中心使用同一缓存文件。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-11 - 注册服务实例创建失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/11/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>可能是 Registry 的 SPI/IOC 配置出错导致。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
+&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
 &lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-12 - “注册服务” 的实例均已销毁</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;p>在 Dubbo 优雅停机的过程中，通过调用 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>destroyAll&lt;/code> 进行解注册。
@@ -88,6 +115,27 @@
 &lt;li>检查注册中心是否正常工作。&lt;/li>
 &lt;li>检查注册中心所在服务器及其网络是否正常工作。&lt;/li>
 &lt;/ol>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-14 - 动态配置识别失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/14/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/14/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>在使用 dubbo admin 的服务治理功能进行动态配置时，配置文件的内容或者格式不正确会导致无法解析动态配置的内容，产生 1-14 错误。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>请检查动态配置文件的内容或者格式是否正确。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-15 - 销毁服务失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/15/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/15/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>在 RegistryDirectory 中销毁所有的 invoker 时抛出异常则可能触发 1-15 错误。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
+&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-16 - 存在不支持的类别</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/16/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/16/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;p>当注册中心的发生变化时，会 notify 对应的 listener。在 notify 的时候如果 category 非法，则会产生 1-16 错误。&lt;/p>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
+&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
 &lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-17 - metadata Server 失效</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/17/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/17/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;p>可能是metadata的相关参数配置出现问题，特别是 &lt;code>metadataServiceProtocol&lt;/code> 和 &lt;code>metadataServicePort&lt;/code>.&lt;/p>
